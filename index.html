@@ -871,68 +871,68 @@
 
         <!-- Card de Música -->
         <div class="card-musica">
-            <img src="imagens/capa1.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/1.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Thousand Years</h3>
                 <p>Christina Perri</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m1.mp3', 30, 75)">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m1.mp3', 20, 85)">▶ Ouvir</button>
             </div>
         </div>
 
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/3.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Just Say You Won't Let Go</h3>
                 <p>James Arthur</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m2.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m2.mp3', 30, 90)">▶ Ouvir</button>
             </div>
         </div>
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/7.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Velha Infância</h3>
                 <p>Tribalistas</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m3.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m3.mp3', 16, 85)">▶ Ouvir</button>
             </div>
         </div>
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/8.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Que Sorte a Nossa</h3>
                 <p>Matheus e Kauan</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m4.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m4.mp3', 30, 92)">▶ Ouvir</button>
             </div>
         </div>
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/14.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Antídoto</h3>
                 <p>Matheus e Kauan</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m5.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m5.mp3', 25, 84)">▶ Ouvir</button>
             </div>
         </div>
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/11.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Best Part</h3>
                 <p>Daniel Caesar</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m6.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m6.mp3', 22, 100)">▶ Ouvir</button>
             </div>
         </div>
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/8.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Home</h3>
                 <p>Gabriel Aplin</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m7.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m7.mp3', 60, 137)">▶ Ouvir</button>
             </div>
         </div>
         <div class="card-musica">
-            <img src="imagens/capa2.jpg" alt="Foto do Casal / Capa">
+            <img src="imagens/2.jpeg" alt="Foto do Casal / Capa">
             <div class="detalhes-musica">
                 <h3>Os Anjos Cantam Nosso Amor</h3>
                 <p>Matheus e Kauan</p>
-                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m8.mp3')">▶ Ouvir</button>
+                <button class="btn-play" onclick="tocarTrilha(this, 'audios/m8.mp3', 0, 85)">▶ Ouvir</button>
             </div>
         </div>
     </div>
@@ -1174,7 +1174,7 @@ setInterval(atualizarContador, 1000);
 atualizarContador();
 
 // --- 3. JOGO DA MEMÓRIA ---
-const fotosJogo = ['a.jpeg', 'b.jpeg', 'c.jpeg', 'd.jpeg', 'e.jpeg', 'f.jpeg'];
+const fotosJogo = ['imagens/1.jpeg', 'imagens/3.jpeg', 'imagens/14.jpeg', 'imagens/10.jpeg', 'imagens/2.jpeg', 'imagens/6.jpeg'];
 let cartasViradas = [];
 let paresEncontrados = 0;
 
@@ -1297,8 +1297,13 @@ let pontuacao = 0;
 function iniciarQuiz() {
     indicePerguntaAtual = 0;
     pontuacao = 0;
-    document.getElementById('quiz-container').style.display = 'block';
-    document.getElementById('resultado-quiz').style.display = 'none';
+    
+    const quizContainer = document.getElementById('quiz-container');
+    const resultadoQuiz = document.getElementById('resultado-quiz');
+
+    if (quizContainer) quizContainer.style.display = 'block';
+    if (resultadoQuiz) resultadoQuiz.style.display = 'none';
+
     carregarPergunta();
 }
 
@@ -1357,6 +1362,10 @@ function mostrarResultado() {
 function reiniciarQuiz() {
     iniciarQuiz();
 }
+// 🔥 ESTA LINHA É O SEGREDO: Inicia o quiz assim que o ficheiro carrega!
+document.addEventListener("DOMContentLoaded", function() {
+    iniciarQuiz();
+});
 
 // --- 5. CARROSSEL DE MEMÓRIAS ---
 let fotoAtual = 0;
