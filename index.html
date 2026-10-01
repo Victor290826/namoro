@@ -648,6 +648,30 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(216, 27, 96, 0.15);
 }
+/* Animação para corações flutuantes no fundo */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.heart-bg {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: floatHearts 6s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}vava
     </style>
 </head>
 <body>
@@ -722,12 +746,12 @@
                
             <div class="card-menu" onclick="abrirTela('tela-musicas')">
                 <div class="card-icone">🎵</div>
-                <div class="card-titulo">Nossas Trilhas Sonora</div>
+                <div class="card-titulo">As Nossas Músicas</div>
                 <p class="subtitulo">as músicas que me lembram você 💕</p>
             </div>
 
             <div class="card-menu" onclick="abrirTela('tela-planos')">
-                <div class="card-icone"><i class="fa-solid fa-list-check"></i></div>
+                <div class="card-icone">📝</div>
                 <h3 class="card-titulo">Nossos Planos a Dois</h3>
                 <p class="subtitulo">coisas incríveis que ainda vamos fazer juntos 💕</p>
             </div>
