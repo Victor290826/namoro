@@ -1523,6 +1523,30 @@ function carregarPlanos() {
 
 // Executa ao carregar o site
 window.addEventListener('DOMContentLoaded', carregarPlanos);
+// Função para criar corações flutuantes no fundo
+function gerarCoracoesFundo() {
+    const coracao = document.createElement('div');
+    coracao.classList.add('heart-bg');
+    coracao.innerText = '❤️️';
+    
+    // Posição horizontal aleatória (0% a 100% da largura da tela)
+    coracao.style.left = Math.random() * 100 + 'vw';
+    
+    // Tamanho e duração aleatórios para um efeito mais natural
+    const duracao = Math.random() * 3 + 4; // entre 4s e 7s
+    coracao.style.animationDuration = duracao + 's';
+    coracao.style.fontSize = (Math.random() * 15 + 15) + 'px';
+
+    document.body.appendChild(coracao);
+
+    // Remove o coração do código após terminar a animação
+    setTimeout(() => {
+        coracao.remove();
+    }, duracao * 1000);
+}
+
+// Cria um novo coração a cada 500 milissegundos
+setInterval(gerarCoracoesFundo, 500);
 </script>
 
 </body>
